@@ -1,5 +1,7 @@
 :root{
+  --clr-accent-500: hsl(12, 60%, 40%);
   --clr-accent-400: hsl(12, 88%, 59%);
+  --clr-accent-300: hsl(12, 88%, 75%);
   --clr-accent-100: hsl(13, 100%, 96%);
  
   --clr-primary-400: hsl(228, 39%, 23%);
@@ -163,10 +165,12 @@ picture {
 /* Heading Styles */
 .fs-primary-heading{
   font-size: var(--fs-primary-heading);
+  line-height: 1.1;
 }
 
 .fs-secondary-heading{
   font-size: var(--fs-primary-heading);
+  line-height: 1.1;
 }
 
 /* Font Size Styles */
@@ -174,6 +178,15 @@ picture {
 .fs-400{ font-size: var( --fs-400);}
 .fs-500{ font-size: var( --fs-500);}
 .fs-600{ font-size: var( --fs-600);}
+
+
+.padding-block-700{
+  padding-block:var(--size-700);
+}
+.padding-block-900{
+  padding-block:var(--size-900);
+}
+
 
 /* Container Styles */
 .container{
@@ -206,4 +219,33 @@ body{
   font-family: var(--ff-body);
   color: var(--clr-primary-400);
   margin-inline: auto;;
+}
+
+.button{
+  border:0;
+  border-radius: 100vmax;
+  padding: 1.25em 2.5em;
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-button);
+  line-height: 1;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-accent-400);
+  box-shadow: 0 1.125em 1em -1em var(--clr-accent-500);
+}
+
+.button:hover,
+.button:focus-visible{
+background-color: var(--clr-accent-300);
+cursor: pointer;
+}
+
+.button[data-type="inverted"]{
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-accent-400);
+}
+.button[data-type="inverted"]:hover,
+.button[data-type="inverted"]:focus-visible{
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-accent-300);
 }
