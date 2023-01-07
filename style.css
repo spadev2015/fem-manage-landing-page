@@ -4,8 +4,9 @@
  
   --clr-primary-400: hsl(228, 39%, 23%);
  
-  --clr-neutral-100: hsl(232, 12%, 13%);
-  --clr-neutral-900: hsl(0, 0%, 0%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-900: hsl(232, 12%, 13%);
+
 
   --ff-primary: 'Be Vietnam Pro', sans-serif;
   --ff-body: var(--ff-primary);
@@ -28,6 +29,17 @@
   --fs-secondary-heading: var(--fs-700);
   --fs-nav: var(--fs-500);
   --fs-button: var(--fs-300);
+
+  --size-100: .25rem;
+  --size-200: .5rem;
+  --size-300: .75rem;
+  --size-400: 1rem;
+  --size-500: 1.5rem;
+  --size-600: 2rem;
+  --size-700: 3rem;
+  --size-800: 4rem;
+  --size-900: 5rem;
+  
 }
 
 @media (min-width: 50em) {
@@ -109,6 +121,7 @@ picture {
 }
 /*Utility Classes*/
 
+/* Font Colors */
 .text-primary-400{
   color: var(--clr-primary-400);
 }
@@ -125,6 +138,8 @@ picture {
   color: var(--clr-neutral-900);
 }
 
+/* Background Colors */
+
 .bg-primary-400{
   background-color: var(--clr-primary-400);
 }
@@ -140,11 +155,12 @@ picture {
 .bg-neutral-900{
   background-color: var(--clr-neutral-900);
 }
-
+/* Font Styles */
 .fw-bold{ font-weight: var(--fw-bold); }
 .fw-semi-bold{ font-weight: var(--fw-semi-bold);}
 .fw-regular{ font-weight: var(--fw-regular);}
 
+/* Heading Styles */
 .fs-primary-heading{
   font-size: var(--fs-primary-heading);
 }
@@ -153,7 +169,41 @@ picture {
   font-size: var(--fs-primary-heading);
 }
 
+/* Font Size Styles */
 .fs-300{ font-size: var( --fs-300);}
 .fs-400{ font-size: var( --fs-400);}
 .fs-500{ font-size: var( --fs-500);}
 .fs-600{ font-size: var( --fs-600);}
+
+/* Container Styles */
+.container{
+  --max-width: 1110px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+/* Coulmn Styles */
+.even-columns{
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 50em){
+  .even-columns{
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+
+
+/* General Styling */
+
+body{
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+  color: var(--clr-primary-400);
+  margin-inline: auto;;
+}
