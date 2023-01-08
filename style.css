@@ -214,7 +214,7 @@ font-size: var(--fs-nav);
  .primary-navigation{
   display: none;
   max-width: 25rem;
-  margin-left:auto;
+  margin :auto;
   position: absolute;
   padding: var(--size-700);
   inset: 7rem var(--size-400) auto;
@@ -239,6 +239,7 @@ font-size: var(--fs-nav);
 
  .primary-navigation[data-visible]{
   display: block;
+  z-index:1;
  }
 
  .mobile-nav-toggle{
