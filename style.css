@@ -400,6 +400,8 @@ input:where([type="text"], [type="email"]){
 
 .numbered-items {
   counter-reset: count;
+  width: fit-content;
+  margin-inline: auto;
 }
 
 .numbered-items li {
@@ -491,6 +493,25 @@ align-items: center;
   margin-top: var(--flow-spacer, 3em);
 }
 
+.text-center{
+  text-align:center;
+}
+
+.text-center p{
+  margin-inline: auto;
+}
+
+@media (max-width: 50em){
+  .text-center-sm-only{
+    text-align: center;
+  }
+
+  .text-center-sm-only p{
+    margin-inline:auto;
+  }
+}
+
+
 
 /* Font Colors */
 .text-primary-400{
@@ -552,8 +573,13 @@ align-items: center;
 .padding-block-700{
   padding-block:var(--size-700);
 }
+
 .padding-block-900{
   padding-block:var(--size-900);
+}
+
+.margin-bottom-700{
+  margin-block-end: var(--size-700);
 }
 
 .display-sm-none{
