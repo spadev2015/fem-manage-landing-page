@@ -45,7 +45,7 @@
   
 }
 
-@media (min-width: 50em) {
+@media (min-width: 47em) {
   :root {
     --fs-700: 3.5rem;
     --fs-600: 2.5rem;
@@ -73,7 +73,8 @@
 
 html,
 body {
-height: 100%;
+min-height: 100%;
+overflow-x: hidden;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -192,6 +193,8 @@ p[data-width="wide"] {
   justify-content: space-between;
 }
 
+
+
 .mobile-nav-toggle{
   display: none;
 }
@@ -217,17 +220,22 @@ font-size: var(--fs-nav);
   color: var(--clr-accent-400);
 }
 
-@media(max-width: 50em){
+@media(max-width: 47em){
  .primary-navigation{
   display: none;
   max-width: 25rem;
   margin :auto;
-  position: absolute;
+  position: fixed;
   padding: var(--size-700);
   inset: 7rem var(--size-400) auto;
   background: var(--clr-neutral-100);
   border-radius: var(--size-100);
   box-shadow: 0 0 .75em rgb(0, 0, 0, 0.05);
+ }
+
+ .primary-header[data-overlay]{
+  position: relative;
+  z-index: 999;
  }
 
  .primary-header[data-overlay]::before{
@@ -250,18 +258,27 @@ font-size: var(--fs-nav);
  }
 
  .mobile-nav-toggle{
-  position:absolute;
+  position:fixed;
   top: var(--size-600);
   right: var(--size-400);
   cursor: pointer;
   background:transparent;
   border: 0;
   padding: 0.5em;
+  width: 1.65em;
+  aspect-ratio: 1;
   display: block;
+
+  background-image: url(images/icon-hamburger.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
  }
  
- .mobile-nav-toggle .icon-close{
-   display:none;
+ .mobile-nav-toggle[aria-expanded="true"]{
+   background-image: url("images/icon-close.svg");
+   background-size: contain;
+   background-repeat: no-repeat;
  }
 }
 
@@ -312,7 +329,7 @@ input:where([type="text"], [type="email"]){
   padding: var(--size-300) var(--size-400);
 }
 
-@media(min-width: 50em){
+@media(min-width: 47em){
   .primary-footer-wrapper{
     grid-template-areas: "logo-social nav form"
   }
@@ -328,7 +345,7 @@ input:where([type="text"], [type="email"]){
 
 }
 
-@media(max-width: 50em){
+@media(max-width: 47em){
   .primary-footer-wrapper > * {
     margin-inline: auto;
   }
@@ -367,7 +384,7 @@ input:where([type="text"], [type="email"]){
   fill: var(--clr-accent-400);
 }
 
-@media (min-width: 50em){
+@media (min-width: 47em){
   .social-list{
     gap:var(--size-300);
   }
@@ -384,7 +401,7 @@ input:where([type="text"], [type="email"]){
   text-align: center;
 }
 
-@media (min-width: 50em){
+@media (min-width: 47em){
   .cta{
     text-align: left;
   }
@@ -472,6 +489,54 @@ input:where([type="text"], [type="email"]){
 }
 
 
+/* .hero__image 
+with pill shape 
+background */
+
+@media (max-width: 47em ) {
+  .hero__image{
+    order: -1;
+  }
+  
+}
+
+.hero__image::before{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 87%;
+  height: 100%;
+  max-height: 70vh;
+  max-height: 70dvh;
+  aspect-ratio: 1 / 1.2;
+  z-index: -1;
+  background-image: url("images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+@media (min-width: 47em ) {
+  .hero__image::before{
+    width: 45%;
+  }
+}
+
+.sales-points{
+  position: relative;
+}
+
+.sales-points::before{
+  content: url("images/bg-tablet-pattern.svg");
+  position: absolute;
+  left: 70%;
+  bottom: 90%;
+  width: 100px;
+  z-index: -1;
+  zoom: 30%;
+}
+ 
+
 /*Utility Classes*/
 
 .visually-hidden {
@@ -501,7 +566,7 @@ input:where([type="text"], [type="email"]){
   gap: 1rem;
 }
 
-@media (min-width: 50em){
+@media (min-width: 47em){
   .even-columns{
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
@@ -516,7 +581,7 @@ align-items: center;
   justify-self: end;
 }
 
-@media (min-width: 50em){
+@media (min-width: 47em){
   .justify-self-end-md{
     justify-self: end;
   }
@@ -528,14 +593,14 @@ align-items: center;
 }
 
 .text-center{
-  text-align:center;
+  text-align: center;
 }
 
 .text-center p{
   margin-inline: auto;
 }
 
-@media (max-width: 50em){
+@media (max-width: 47em){
   .text-center-sm-only{
     text-align: center;
   }
@@ -714,11 +779,15 @@ align-items: center;
   margin-block-end: var(--size-700);
 }
 
+.mx-auto{
+  margin-inline: auto;
+}
+
 .display-sm-none{
   display: none;
 }
 
-@media(min-width: 50em){
+@media(min-width: 47em){
   .display-md-inline-flex{
     display: inline-flex;
   }
