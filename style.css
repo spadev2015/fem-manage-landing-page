@@ -522,18 +522,29 @@ background */
   }
 }
 
-.sales-points{
+.sales-points__pills{
   position: relative;
 }
 
-.sales-points::before{
+.sales-points__pills::before{
   content: url("images/bg-tablet-pattern.svg");
   position: absolute;
-  left: 70%;
-  bottom: 90%;
-  width: 100px;
+  left: 65%;
+  bottom: 120%;
   z-index: -1;
-  zoom: 30%;
+  zoom: 40%;
+  width: 100px;
+}
+
+@media ( min-width: 47em ) {
+  .sales-points__pills::before{
+    top: 40%;
+    left: -500px;
+    bottom: 100%;
+    width: 100px;
+    z-index: -1;
+    zoom: 90%;
+  }
 }
  
 
@@ -588,7 +599,7 @@ align-items: center;
 }
 
 
-:where(.flow :not(:first-child)){
+:where(.flow :not( :first-child )){
   margin-top: var(--flow-spacer, 3em);
 }
 
@@ -754,6 +765,7 @@ align-items: center;
   font-size: var(--fs-primary-heading);
   line-height: 1.1;
 }
+
 
 .fs-secondary-heading{
   font-size: var(--fs-primary-heading);
