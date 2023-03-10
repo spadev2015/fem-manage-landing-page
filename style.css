@@ -45,7 +45,7 @@
   
 }
 
-@media (min-width: 47em) {
+@media (min-width: 48em) {
   :root {
     --fs-700: 3.5rem;
     --fs-600: 2.5rem;
@@ -220,7 +220,7 @@ font-size: var(--fs-nav);
   color: var(--clr-accent-400);
 }
 
-@media(max-width: 47em){
+@media(max-width: 48em){
  .primary-navigation{
   display: none;
   max-width: 25rem;
@@ -329,7 +329,7 @@ input:where([type="text"], [type="email"]){
   padding: var(--size-300) var(--size-400);
 }
 
-@media(min-width: 47em){
+@media(min-width: 48em){
   .primary-footer-wrapper{
     grid-template-areas: "logo-social nav form"
   }
@@ -345,7 +345,7 @@ input:where([type="text"], [type="email"]){
 
 }
 
-@media(max-width: 47em){
+@media(max-width: 48em){
   .primary-footer-wrapper > * {
     margin-inline: auto;
   }
@@ -384,7 +384,7 @@ input:where([type="text"], [type="email"]){
   fill: var(--clr-accent-400);
 }
 
-@media (min-width: 47em){
+@media (min-width: 48em){
   .social-list{
     gap:var(--size-300);
   }
@@ -401,7 +401,7 @@ input:where([type="text"], [type="email"]){
   text-align: center;
 }
 
-@media (min-width: 47em){
+@media (min-width: 48em){
   .cta{
     text-align: left;
   }
@@ -493,7 +493,7 @@ input:where([type="text"], [type="email"]){
 with pill shape 
 background */
 
-@media (max-width: 47em ) {
+@media (max-width: 48em ) {
   .hero__image{
     order: -1;
   }
@@ -531,7 +531,7 @@ background */
     z-index: -1;
 }
 
-@media (min-width: 47em ) {
+@media (min-width: 48em ) {
   .hero__image::before{
     position: absolute;
     right: 0%;
@@ -555,7 +555,7 @@ background */
   width: 100px;
 }
 
-@media ( min-width: 47em ) {
+@media ( min-width: 48em ) {
   .sales-points__pills::before{
     top: 40%;
     left: -500px;
@@ -596,7 +596,7 @@ background */
   gap: 1rem;
 }
 
-@media (min-width: 47em){
+@media (min-width: 48em){
   .even-columns{
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
@@ -611,7 +611,7 @@ align-items: center;
   justify-self: end;
 }
 
-@media (min-width: 47em){
+@media (min-width: 48em){
   .justify-self-end-md{
     justify-self: end;
   }
@@ -630,7 +630,7 @@ align-items: center;
   margin-inline: auto;
 }
 
-@media (max-width: 47em){
+@media (max-width: 48em){
   .text-center-sm-only{
     text-align: center;
   }
@@ -711,7 +711,7 @@ align-items: center;
   background: var(--clr-accent-400);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   .slider > * {
     width: 50%;
   }
@@ -818,7 +818,7 @@ align-items: center;
   display: none;
 }
 
-@media(min-width: 47em){
+@media(min-width: 48em){
   .display-md-inline-flex{
     display: inline-flex;
   }
