@@ -11,10 +11,11 @@
   --clr-neutral-900: hsl(232, 12%, 13%);
 
 
-  --ff-primary: 'Be Vietnam Pro', sans-serif;
+  --ff-primary: 'Be Vietnam', sans-serif;
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);
 
+  --fw-lighter: 300;
   --fw-regular: 400;
   --fw-semi-bold: 500;
   --fw-bold: 700;
@@ -33,9 +34,9 @@
   --fs-nav: var(--fs-500);
   --fs-button: var(--fs-300);
 
-  --size-100: .25rem;
-  --size-200: .5rem;
-  --size-300: .75rem;
+  --size-100: 0.25rem;
+  --size-200: 0.5rem;
+  --size-300: 0.75rem;
   --size-400: 1rem;
   --size-500: 1.5rem;
   --size-600: 2rem;
@@ -47,10 +48,9 @@
 
 @media (min-width: 48em) {
   :root {
-    --fs-700: 3.5rem;
-    --fs-600: 2.5rem;
-
-    --fs-body: var(--fs-500);
+    --fs-body: var(--fs-600);
+    --fs-primary-heading: var(--fs-900);
+    --fs-secondary-heading: var(--fs-800);
     --fs-nav: var(--fs-300);
   }
 }
@@ -136,8 +136,8 @@ body {
 }
 
 p:not([class]) {
-  opacity: 0.7;
-  max-width: 46ch;
+  opacity: 0.5;
+  max-width: 32ch;
 }
 
 p[data-width="wide"] {
@@ -460,6 +460,18 @@ input:where([type="text"], [type="email"]) {
   }
 }
 
+@media (max-width: 30em) {
+  .numbered-items__body {
+
+    --fs-line-height-items: 1.75rem;
+
+    margin-inline: auto;
+    font-size: var(--fs-400);
+    line-height: var(--fs-line-height-items);
+    opacity: 0.5;
+  }
+}
+
 .numbered-items div::before,
 .numbered-items div::after {
   height: 40px;
@@ -497,79 +509,108 @@ input:where([type="text"], [type="email"]) {
 with pill shape 
 background */
 
-@media (max-width: 48em) {
-  .hero__image {
-    order: -1;
-  }
-
-}
-
 .hero__image {
   position: relative;
 }
 
+@media (max-width: 48em) {
+  .hero__image {
+    order: -1;
+  }
+}
+
+@media (min-width: 48em) {
+  .hero__image {
+    order: 1;
+  }
+}
+
+/* Pure CSS */
+
 .hero__image::before {
-  /* content: url("images/bg-tablet-pattern.svg");
-  position: absolute;
-  right: 20%;
-  bottom: 0%;
-  width: 70%;
-  
-  z-index: -1; */
-  /* background-image: url("images/bg-tablet-pattern.svg");
-  background-repeat: no-repeat;
-  background-position: bottom left; */
-  /* height: 100%; */
-  /* max-height: 70vh;
-    max-height: 70dvh;
-    aspect-ratio: 1 / 1.2; */
   content: "";
   position: absolute;
-  width: 250px;
-  height: 970px;
-  left: 285px;
-  bottom: -61px;
   background: #FFF0EC;
   border-radius: 272px;
   transform: rotate(45deg);
   z-index: -1;
+
+  width: 436px;
+  height: 970px;
+  left: 45%;
+  bottom: -1%;
+
 }
 
-@media (min-width: 48em) {
+
+
+@media (max-width: 48em) {
   .hero__image::before {
-    position: absolute;
-    right: 0%;
-    bottom: 0%;
-    width: 100%;
-    z-index: -1;
+    left: 200px;
+    width: calc(436px - 10px);
+    max-width: 436px;
+    bottom: calc(8% + -58px);
+    order: 1;
   }
 }
+
+@media (max-width: 43em) {
+  .hero__image::before {
+    left: calc(300px + 10px);
+    bottom: 4%;
+  }
+}
+
+@media (max-width: 30em) {
+  .hero__image::before {
+    left: calc(300px + 10px);
+    width: calc(244px - 10px);
+    max-width: 244px;
+    bottom: calc(8% + -58px);
+    order: 1;
+  }
+}
+
+
+/* Sales Points Pill Shape */
 
 .sales-points__pills {
   position: relative;
 }
 
 .sales-points__pills::before {
-  content: url("images/bg-tablet-pattern.svg");
+  content: "";
   position: absolute;
-  left: 65%;
-  bottom: 120%;
   z-index: -1;
-  zoom: 40%;
-  width: 100px;
+  transform: rotate(45deg);
+  background: #FFF0EC;
+  border-radius: 272px;
+
+  width: 436px;
+  height: 970px;
+  left: -50%;
+  bottom: -600px;
 }
 
-@media (min-width: 48em) {
-  .sales-points__pills::before {
-    top: 40%;
-    left: -500px;
-    bottom: 100%;
-    width: 100px;
-    z-index: -1;
-    zoom: 90%;
+@media (max-width: 48em) {
+.sales-points__pills::before {
+    width: 436px;
+    height: 970px;
+    left: -50%;
+    bottom: -600px;
   }
 }
 
+@media (max-width: 30em) {
+  .sales-points__pills::before {
+    left: 84%;
+    width: 170px;
+    max-width: 170px;
+    bottom: 218px;
+    height: 378px;
+    order: 1;
+  }
+}
 
 /*Utility Classes*/
 
@@ -641,8 +682,16 @@ background */
   }
 
   .text-center-sm-only p {
+
+    --fs-line-height-p: 1.75rem;
+
     margin-inline: auto;
+    font-size: var(--fs-600);
+    line-height: var(--fs-line-height-p);
+    font-weight: var(--fw-lighter);
   }
+
+
 }
 
 /* Slider */
@@ -803,16 +852,35 @@ background */
   font-weight: var(--fw-regular);
 }
 
+
+
 /* Heading Styles */
 .fs-primary-heading {
   font-size: var(--fs-primary-heading);
   line-height: 1.1;
 }
+@media (max-width: 30rem){
+  .fs-primary-heading {
+    line-height: 3.125rem;
+    letter-spacing: -1px;
+  }
+}
 
 
 .fs-secondary-heading {
   font-size: var(--fs-primary-heading);
-  line-height: 1.1;
+  line-height:1.1;
+}
+@media(max-width: 30rem){
+  .fs-secondary-heading {
+
+    --fs-primary-heading-mobile:1.875rem;
+
+    font-size: var(--fs-primary-heading-mobile);
+    line-height: 2.813rem;
+    letter-spacing: -1px;
+    max-width: 34ch;
+  }
 }
 
 /* Font Size Styles */
