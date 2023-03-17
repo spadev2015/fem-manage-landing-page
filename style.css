@@ -135,9 +135,13 @@ body {
   color: var(--clr-primary-400);
 }
 
+p{
+  line-height:28px;
+}
+
 p:not([class]) {
   opacity: 0.5;
-  max-width: 32ch;
+  max-width: 34ch;
 }
 
 p[data-width="wide"] {
@@ -292,20 +296,63 @@ p[data-width="wide"] {
 .primary-footer-wrapper {
   display: grid;
   gap: var(--size-700);
+  align-items: start;
+  /* justify-content: center; */
   grid-template-areas:
     "form"
     "nav"
-    "logo-social";
+    "social"
+    "manage-logo"
+    "copyright";
 }
 
-.primary-footer-logo-social {
+.primary-footer__logo{
+  grid-area: manage-logo;
+}
+
+.primary-footer__form{
+  grid-area: form;
+}
+
+.primary-footer__copyright{
+  grid-area: copyright;
+  opacity: 0.7;
+  text-align: right;
+}
+
+@media(min-width: 48em) {
+  .primary-footer-wrapper {
+    grid-template-areas: 
+    "manage-logo nav form"
+    "social nav copyright";
+    font-size: 80%;
+  }
+
+}
+
+@media(max-width: 48em) {
+  .primary-footer-wrapper > * {
+    margin-inline: auto;
+  }
+
+  .primary-footer-wrapper{
+    grid-template-areas: 
+    "form" 
+    "nav"
+    "social" 
+    "manage-logo"
+    "copyright";
+  }
+}
+
+/* .primary-footer-logo-social {
   grid-area: logo-social;
 
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   gap: var(--size-700);
-}
+} */
 
 .primary-footer-nav {
   grid-area: nav;
@@ -320,6 +367,7 @@ p[data-width="wide"] {
 
 .primary-footer form {
   display: flex;
+  justify-content: flex-end;
   gap: var(--size-200);
 
 }
@@ -328,30 +376,10 @@ input:where([type="text"], [type="email"]) {
   border-radius: 100vw;
   border: 0;
   padding: var(--size-300) var(--size-400);
+  width: 100%;
 }
 
-@media(min-width: 48em) {
-  .primary-footer-wrapper {
-    grid-template-areas: "logo-social nav form"
-  }
 
-  .primary-footer-logo-social {
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: var(--size-700);
-  }
-
-  .primary-footer-logo-social a {
-    grid-template-areas: logo-social;
-  }
-
-}
-
-@media(max-width: 48em) {
-  .primary-footer-wrapper>* {
-    margin-inline: auto;
-  }
-}
 
 /* Footer Nav */
 
@@ -411,6 +439,16 @@ input:where([type="text"], [type="email"]) {
   }
 }
 
+@media(max-width: 30em){
+  .cta .container p{
+    font-size: var(--fs-800);
+    padding: 0 0.3em;
+    margin: auto;
+    max-width: 14ch;
+
+  }
+}
+
 .cta::before {
   content: "";
   position: absolute;
@@ -445,6 +483,7 @@ input:where([type="text"], [type="email"]) {
 }
 
 .numbered-items__title {
+  font-size:var(--fs-600);
   grid-row: 1 / 2;
   grid-column: 2 / 3;
   line-height: 1;
@@ -482,6 +521,7 @@ input:where([type="text"], [type="email"]) {
   display: flex;
   align-items: center;
   color: var(--clr-neutral-100);
+  font-size: var(--fs-600);
   font-weight: var(--fw-bold);
   background-color: var(--clr-accent-400);
   padding: 0 var(--size-500);
@@ -502,6 +542,17 @@ input:where([type="text"], [type="email"]) {
     box-shadow: 5em 0 0 var(--bg);
     background: var(--bg);
   }
+}
+
+/* hero_content - mobile */
+
+@media(max-width: 30em){
+ .hero__content p{
+  font-size: var(--fs-600);
+ }
+ .hero__content button{
+  margin-top: 1.875rem;
+ }
 }
 
 
@@ -578,6 +629,17 @@ background */
   position: relative;
 }
 
+@media (max-width: 30em){
+  .sales-points__content h2{
+    padding: 0 var(--size-500);
+  }
+
+  .sales-points__content p{
+    font-size: var(--fs-400);
+    max-width: 34ch;
+  }
+}
+
 .sales-points__pills::before {
   content: "";
   position: absolute;
@@ -606,7 +668,7 @@ background */
     left: 84%;
     width: 170px;
     max-width: 170px;
-    bottom: 218px;
+    bottom: 192px;
     height: 378px;
     order: 1;
   }
@@ -686,7 +748,6 @@ background */
     --fs-line-height-p: 1.75rem;
 
     margin-inline: auto;
-    font-size: var(--fs-600);
     line-height: var(--fs-line-height-p);
     font-weight: var(--fw-lighter);
   }
@@ -859,7 +920,7 @@ background */
   font-size: var(--fs-primary-heading);
   line-height: 1.1;
 }
-@media (max-width: 30rem){
+@media (max-width: 30em){
   .fs-primary-heading {
     line-height: 3.125rem;
     letter-spacing: -1px;
@@ -871,12 +932,12 @@ background */
   font-size: var(--fs-primary-heading);
   line-height:1.1;
 }
-@media(max-width: 30rem){
+@media(max-width: 30em){
   .fs-secondary-heading {
 
-    --fs-primary-heading-mobile:1.875rem;
+    --fs-secondary-heading-mobile:1.875rem;
 
-    font-size: var(--fs-primary-heading-mobile);
+    font-size: var(--fs-secondary-heading-mobile);
     line-height: 2.813rem;
     letter-spacing: -1px;
     max-width: 34ch;

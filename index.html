@@ -39,9 +39,9 @@
     <section class="hero | text-center-sm-only padding-block-700">
       <div class="container">
         <div class="even-columns">
-          <div class="flow text-center-sm-only" style="--flow-spacer: 1em">
+          <div class="hero__content | flow text-center-sm-only" style="--flow-spacer: 1em">
             <h1 class="fs-primary-heading fw-bold">Bring everyone together to build better products.</h1>
-            <p >Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
+            <p>Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
             <button class="button">Get Started</button>
           </div>
           <div class="hero__image">
@@ -54,7 +54,7 @@
     <section class="sales-points | padding-block-700">
       <div class="container">
         <div class="even-columns">
-          <div class="sales-points__pills | flow text-center-sm-only margin-bottom-700" style="--flow-spacer: 1.5rem">
+          <div class="sales-points__content sales-points__pills | flow text-center-sm-only margin-bottom-700" style="--flow-spacer: 1.5rem">
             <h2 class="fs-secondary-heading fw-bold">What’s different about Manage?</h2>
             <p>Manage provides all the functionality your team needs, without the complexity. Our software is
               tailor-made for modern
@@ -164,9 +164,9 @@
    <footer class="primary-footer | padding-block-700 bg-neutral-900 text-neutral-100">
     <div class="container">
       <div class="primary-footer-wrapper">
-        <div class="primary-footer-logo-social">
-          <a href="#" aria-label="Back to top">
-            <svg class="logo" width="146" height="24">
+        <!-- <div class="primary-footer-logo-social"> -->
+          <a  class="primary-footer__logo" href="#" aria-label="Back to top">
+            <svg class="logo | mx-auto" width="146" height="24">
               <use xlink:href="images/logo.svg#logo"></use>
             </svg>
           </a>
@@ -207,7 +207,7 @@
               </a>
             </li>
           </ul>
-        </div>
+        <!-- </div> -->
         
         <div class="primary-footer-nav">
           <nav class="footer-nav">
@@ -223,13 +223,13 @@
           </nav>
         </div>
         
-        <div class="primary-footer-form">
-          <form action="">
+        <!-- <div class="primary-footer-form"> -->
+          <form class="primary-footer__form" action="">
             <input type="email">
             <button class="button" data-shadow="none">Go</button>
           </form>
-          <p>Copyright 2020. All Rights Reserved</p>
-        </div>
+          <p class="primary-footer__copyright">Copyright 2020. All Rights Reserved</p>
+        <!-- </div> -->
         
       </div>
     </div>
