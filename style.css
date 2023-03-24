@@ -801,6 +801,7 @@ background */
   display: flex;
   list-style: none;
   /* gap: var(--size-600); */
+  height: 100%;
 }
 
 .slider>* {
@@ -833,7 +834,10 @@ background */
 }
 
 
-
+.a11y-slider{
+  /* prevents slider height being set to 0 */
+  height: 100%!important;
+}
 
 .a11y-slider-container {
   margin-block: var(--size-700);
