@@ -21,7 +21,7 @@ const slider = new A11YSlider(document.querySelector('.slider'), {
                 slidesToShow: 2,
     //             dots: true,
     //             arrows: false,
-    //             adaptiveHeight: true
+                adaptiveHeight: true
             },
             960: { 
     //             adaptiveHeight: true,
