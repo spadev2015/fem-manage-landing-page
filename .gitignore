@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+ngrok-v3-stable-darwin-amd64.zip
+ngrok
